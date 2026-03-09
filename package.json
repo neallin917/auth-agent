@@ -1,0 +1,56 @@
+{
+  "name": "auth-agent",
+  "version": "0.1.0",
+  "description": "CLI tool to run AI agents using Claude Max / ChatGPT Plus subscription credits — no paid API keys needed",
+  "type": "module",
+  "bin": {
+    "auth-agent": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "claude",
+    "openai",
+    "codex",
+    "oauth",
+    "subscription",
+    "cli",
+    "ai-agent",
+    "anthropic"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "@mariozechner/pi-ai": "^0.57.1",
+    "auth-agent": "^0.0.1",
+    "commander": "^12.0.0",
+    "open": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}
